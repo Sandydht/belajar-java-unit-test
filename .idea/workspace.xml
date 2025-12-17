@@ -51,6 +51,7 @@
     "JUnit.AppTest.executor": "Run",
     "JUnit.CalculatorTest.executor": "Run",
     "JUnit.CalculatorTest.testAddSuccess.executor": "Run",
+    "JUnit.CalculatorTest.testAssumptions.executor": "Run",
     "JUnit.CalculatorTest.testDivideError.executor": "Run",
     "JUnit.CalculatorTest.testDivideFailed.executor": "Run",
     "JUnit.CalculatorTest.testDivideSuccess.executor": "Run",
@@ -75,7 +76,7 @@
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <envs>
-        <env name="PROFILE" value="DEV" />
+        <env name="PROFILE" value="PROD" />
       </envs>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,6 +93,22 @@
       <option name="PACKAGE_NAME" value="belajar.java.testing" />
       <option name="MAIN_CLASS_NAME" value="belajar.java.testing.CalculatorTest" />
       <option name="METHOD_NAME" value="testAddSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTest.testAssumptions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="belajar-java-unit-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="belajar.java.testing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="belajar.java.testing" />
+      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.CalculatorTest" />
+      <option name="METHOD_NAME" value="testAssumptions" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,6 +164,7 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.CalculatorTest" />
+      <item itemvalue="JUnit.CalculatorTest.testAssumptions" />
       <item itemvalue="JUnit.CalculatorTest.testAddSuccess" />
       <item itemvalue="JUnit.CalculatorTest.testDivideError" />
       <item itemvalue="JUnit.CalculatorTest.testDivideFailed" />
@@ -154,6 +172,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CalculatorTest.testAssumptions" />
         <item itemvalue="JUnit.CalculatorTest.testDivideError" />
         <item itemvalue="JUnit.CalculatorTest.testDivideFailed" />
         <item itemvalue="JUnit.CalculatorTest.testDivideSuccess" />
