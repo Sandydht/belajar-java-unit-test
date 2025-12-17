@@ -2,6 +2,7 @@ package belajar.java.testing;
 
 import belajar.java.testing.generator.SimpleDisplayNameGenerator;
 import org.junit.jupiter.api.*;
+import org.opentest4j.TestAbortedException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -52,5 +53,14 @@ public class CalculatorTest {
     @Disabled
     public void testCommingSoon() {
 
+    }
+
+    @Test
+    public void testAborted() {
+        var profile = System.getenv("PROFILE");
+
+        if (!"DEV".equals(profile)) {
+            throw new TestAbortedException("Test dibatalkan karena bukan DEV");
+        }
     }
 }

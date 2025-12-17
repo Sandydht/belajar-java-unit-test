@@ -255,3 +255,21 @@ public class CalculatorTest {
     }
 }
 ```
+
+# Membatalkan Test
+- Kadang kita ingin membatalkan unit test ketika kondisi tertentu terjadi.
+- Untuk membatalkan, kita bisa menggunakan exception TestAbortedException.
+- Jika JUnit mendapatkan exception TestAbortedException, secara otomatis test tersebut akan dibatalkan.
+- Kode: Membatalkan Test
+```java
+public class CalculatorTest {
+    @Test
+    public void testAborted() {
+        var profile = System.getenv("PROFILE");
+        
+        if (!"DEV".equals(profile)) {
+            throw new TestAbortedException();
+        }
+    }
+}
+```
