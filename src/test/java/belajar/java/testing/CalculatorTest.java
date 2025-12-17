@@ -1,6 +1,7 @@
 package belajar.java.testing;
 
 import belajar.java.testing.generator.SimpleDisplayNameGenerator;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -26,5 +27,11 @@ public class CalculatorTest {
     public void testAddSuccess() {
         var result = calculator.add(10, 10);
         assertEquals(20, result);
+    }
+
+    @Test
+    @Disabled
+    public void testCommingSoon() {
+
     }
 }

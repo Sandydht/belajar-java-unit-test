@@ -206,3 +206,8 @@ public class CalculatorTest {
     }
 }
 ```
+
+# Menonaktifkan Test
+- Kadang ada kalanya kita ingin menonaktifkan unit test, misal karena terjadi error di unit test tersebut, dan belum bisa kita perbaiki.
+- Sebenarnya cara paling mudah untuk menonaktifkan unit test adalah dengan menghapus annotation ```@Test```, namun jika kita lakukan itu, kita tidak bisa mendeteksi kalo ada unit test yang di disabled.
+- Untuk menonaktifkan unit test secara benar, kita bisa menggunakan annotation ```@Disabled```.
