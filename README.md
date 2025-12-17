@@ -211,3 +211,47 @@ public class CalculatorTest {
 - Kadang ada kalanya kita ingin menonaktifkan unit test, misal karena terjadi error di unit test tersebut, dan belum bisa kita perbaiki.
 - Sebenarnya cara paling mudah untuk menonaktifkan unit test adalah dengan menghapus annotation ```@Test```, namun jika kita lakukan itu, kita tidak bisa mendeteksi kalo ada unit test yang di disabled.
 - Untuk menonaktifkan unit test secara benar, kita bisa menggunakan annotation ```@Disabled```.
+
+# Sebelum & Setelah Unit Test
+- Kadang kita ingin menjalankan kode yang sama sebelum dan setelah eksekusi unit test.
+- Hal ini sebenarnya bisa dilakukan secara manual di function ```@Test```-nya, namun hal ini akan membuat kode duplikat banyak sekali.
+- JUnit memiliki annotation ```@BeforeEach``` & ```@AfterEach```.
+- ```@BeforeEach``` digunakan untuk menandai function yang akan dieksekusi sebelum unit test dijalankan.
+- ```@AfterEach``` digunakan untuk menandai function yang akan dieksekusi setelah unit test dijalankan.
+- Ingat, bahwa ini akan selalu dieksekusi setiap kali untuk function ```@Test```, bukan sekali untuk class test saja.
+- Kode: BeforeEach dan AfterEach
+```java
+public class CalculatorTest {
+    private Calculator calculator = new Calculator();
+    
+    @BeforeEach
+    public void setUp() {
+        System.out.println("Before unit test");
+    }
+    
+    @AfterEach
+    public void tearDown() {
+        System.out.println("After unit test");
+    }
+}
+```
+
+## Sebelum & Setelah Semua Unit Test
+- ```@BeforeEach``` & ```@AfterEach``` akan dieksekusi setiap kali function ```@Test``` jalan.
+- Namun kadang kita ingin melakukan sesuatu sebelum semua unit test berjalan, atau setelah semua unit test berjalan.
+- Ini bisa dilakukan menggunakan annotation ```@BeforeAll``` & ```@AfterAll```.
+- Namun hanya static function yang bisa menggunakan ```@BeforeAll``` & ```@AfterAll```.
+- Kode: BeforeAll & AfterAll
+```java
+public class CalculatorTest {
+    @BeforeAll
+    public static void beforeAll() {
+        System.out.println("Before all");
+    }
+    
+    @AfterAll
+    public static void afterAll() {
+        System.out.println("After all");
+    }
+}
+```

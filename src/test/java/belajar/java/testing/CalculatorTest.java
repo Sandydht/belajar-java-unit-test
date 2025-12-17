@@ -1,14 +1,33 @@
 package belajar.java.testing;
 
 import belajar.java.testing.generator.SimpleDisplayNameGenerator;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayNameGeneration;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayNameGeneration(value = SimpleDisplayNameGenerator.class)
 public class CalculatorTest {
     private Calculator calculator = new Calculator();
+
+    @BeforeAll
+    public static void beforeAll() {
+        System.out.println("Before all");
+    }
+
+    @AfterAll
+    public static void afterAll() {
+        System.out.println("After all");
+    }
+
+    @BeforeEach
+    public void setUp() {
+        System.out.println("Before unit test");
+    }
+
+    @AfterEach
+    public void tearDown() {
+        System.out.println("After unit test");
+    }
 
     @Test
     public void testDivideSuccess() {
