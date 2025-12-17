@@ -1,8 +1,11 @@
 package belajar.java.testing;
 
+import belajar.java.testing.generator.SimpleDisplayNameGenerator;
+import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayNameGeneration(value = SimpleDisplayNameGenerator.class)
 public class CalculatorTest {
     private Calculator calculator = new Calculator();
 

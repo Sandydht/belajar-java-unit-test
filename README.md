@@ -150,3 +150,59 @@ public class CalculatorTest {
     }
 }
 ```
+
+# Mengubah Nama Test
+- Kadang agak sulit membuat nama function yang merepresentasikan kasus test-nya.
+- Jika kita ingin menambahkan deskripsi untuk tiap test, kita bisa menggunakan annotation ```@DisplayName```.
+- Dengan menggunakan annotation ```@DisplayName```, kita bisa menambahkan deskripsi unit test-nya.
+- Kode: Menggunakan DisplayName
+```java
+@DisplayName("Test Calculator")
+public class CalculatorTest {
+    private Calculator calculator = new Calculator();
+    
+    @Test
+    @DisplayName("Test Function Calculator.add(Integer, Integer)")
+    public void testAddSuccess() {
+        var result = calculator.add(10, 10);
+        assertEquals(20, result);
+    }
+}
+```
+
+## Menggunakan Display Name Generator
+- JUnit mendukung pembuatan DisplayName secara otomatis menggunakan generator.
+- Yang perlu kita lakukan adalah membuat class turunan dari interface DisplayNameGenerator, lalu menambahkan annotation ```@DisplayNameGenerator``` di test class-nya.
+- Kode: Display Name Generator
+```java
+import org.junit.jupiter.api.DisplayNameGenerator;
+
+import java.lang.reflect.Method;
+
+public class SimpleDisplayNameGenerator implements DisplayNameGenerator {
+    @Override
+    public String generateDisplayNameForClass(Class<?> testClass) {
+        return "Test " + testClass.getSimpleName();
+    }
+    
+    @Override
+    public String generateDisplayNameForMethod(Class<?> testClass, Method testMethod) {
+        return "Test " + testMethod.getName();
+    }
+}
+```
+- Kode: Display Name Generation
+```java
+import org.junit.jupiter.api.DisplayNameGeneration;
+
+@DisplayNameGeneration(value = SimpleDisplayNameGenerator.class)
+public class CalculatorTest {
+    private Calculator calculator = new Calculator();
+
+    @Test
+    public void testAddSuccess() {
+        var result = calculator.add(10, 10);
+        assertEquals(20, result);
+    }
+}
+```

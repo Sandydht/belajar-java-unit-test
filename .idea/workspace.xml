@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f337e3b-7d2a-42ae-95b4-11121553b98c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/belajar/java/testing/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/CalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/generator/SimpleDisplayNameGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/belajar/java/testing/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/CalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/CalculatorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +52,7 @@
     "JUnit.AppTest.executor": "Run",
     "JUnit.CalculatorTest.executor": "Run",
     "JUnit.CalculatorTest.testAddSuccess.executor": "Run",
+    "JUnit.CalculatorTest.testDivideError.executor": "Run",
     "JUnit.CalculatorTest.testDivideFailed.executor": "Run",
     "JUnit.CalculatorTest.testDivideSuccess.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
