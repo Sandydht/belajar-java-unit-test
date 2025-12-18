@@ -296,3 +296,140 @@ public class CalculatorTest {
     }
 }
 ```
+
+# Test Berdasarkan Kondisi 
+- Sebenarnya kita bisa menggunakan Assumptions untuk menjalankan unit test berdasarkan kondisi tertentu.
+- Namun JUnit menyediakan fitur yang lebih mudah untuk pengecekan beberapa kondisi, seperti kondisi sistem operasi, versi Java, system property atau environment variable.
+- Ini lebih mudah dibandingkan menggunakan Assumptions.
+
+## Kondisi Sistem Operasi
+- Untuk kondisi sistem operasi, kita bisa menggunakan beberapa annotation.
+- ```@EnabledOnOs``` digunakan untuk penanda bahwa unit test boleh berjalan di sistem operasi yang ditentukan.
+- ```@DisabledOnOs``` digunakan untuk penanda bahwa unit test tidak boleh berjalan di sistem operasi yang ditentukan.
+- Kode: Kondisi Sistem Operasi
+```java
+public class ConditionTest {
+    @Test
+    @EnabledOnOs(value = {OS.WINDOWS})
+    public void onlyRunOnWindows() {
+        // put your unit test
+    }
+    
+    @Test
+    @DisabledOnOs(value = {OS.WINDOWS})
+    public void disabledRunOnWindows() {
+        // put your unit test
+    }
+}
+```
+
+## Kondisi Versi Java
+- Untuk kondisi versi Java yang kita gunakan, kita bisa menggunakan beberapa annotation.
+- ```@EnabledOnJre``` digunakan untuk penanda bahwa unit test boleh berjalan di Java versi tertentu.
+- ```@DisabledOnJre``` digunakan untuk penanda bahwa unit test tidak boleh berjalan di Java versi tertentu.
+- ```@EnabledForJreRange``` digunakan untuk penanda bahwa unit test boleh berjalan di range Java versi tertentu.
+- ```@DisabledForJreRange``` digunakan untuk penanda bahwa unit test tidak boleh berjalan di range Java versi tertentu.
+- Kode: Kondisi Versi Java
+```java
+public class ConditionTest {
+    @Test
+    @EnabledOnJre(value = {JRE.JAVA_14})
+    public void onlyRunOnJava14() {
+        // put your unit test
+    }
+
+    @Test
+    @DisabledOnJre(value = {JRE.JAVA_14})
+    public void disabledRunOnJava14() {
+        // put your unit test
+    }
+
+    @Test
+    @EnabledForJreRange(min = JRE.JAVA_11, max = JRE.JAVA_15)
+    public void onlyRunOnJava11To15() {
+        // put your unit test
+    }
+
+    @Test
+    @DisabledForJreRange(min = JRE.JAVA_11, max = JRE.JAVA_15)
+    public void disabledRunOnJava11To15() {
+        // put your unit test
+    }
+}
+```
+
+## Kondisi System Property
+- Untuk kondisi nilai dari system property, kita bisa menggunakan beberapa annotation.
+- ```@EnabledIfSystemProperty``` untuk penanda bahwa unit test boleh berjalan jika system property sesuai dengan yang ditentukan.
+- ```@DisabledIfSystemProperty``` untuk penanda bahwa unit test tidak boleh berjalan jika system property sesuai dengan yang ditentukan.
+- Jika kondisinya lebih dari satu, kita bisa menggunakan ```@EnabledIfSystemProperties``` dan ```@DisabledIfSystemProperties```.
+- Kode: Kondisi System Properties
+```java
+public class ConditionTest {
+    @Test
+    @EnabledIfSystemProperty(named = "java.vendor", matches = "Oracle Corporation")
+    public void enabledOnOracle() {
+        // put your unit test
+    }
+
+    @Test
+    @DisabledIfSystemProperty(named = "java.vendor", matches = "Oracle Corporation")
+    public void disabledOnOracle() {
+        // put your unit test
+    }
+
+    @Test
+    @EnabledIfSystemProperties({
+            @EnabledIfSystemProperty(named = "java.vendor", matches = "Oracle Corporation")
+    })
+    public void enabledOnOracles() {
+        // put your unit test
+    }
+
+    @Test
+    @DisabledIfSystemProperties({
+            @DisabledIfSystemProperty(named = "java.vendor", matches = "Oracle Corporation")
+    })
+    public void disabledOnOracles() {
+        // put your unit test
+    }
+}
+```
+
+## Kondisi Environment Variable
+- Untuk kondisi nilai dari environment variable, kita bisa menggunakan beberapa annotation.
+- ```@EnabledIfEnvironmentVariable``` untuk penanda bahwa unit test boleh berjalan jika environment variable sesuai dengan yang ditentukan.
+- ```@DisabledIfEnvironmentVariable``` untuk penanda bahwa unit test tidak boleh berjalan jika environment variable sesuai dengan yang ditentukan.
+- Jika kondisinya lebih dari satu, kita bisa menggunakan ```@EnabledIfEnvironmentVariables``` dan ```@DisabledIfEnvironmentVariables```.
+- Kode: Kondisi Environment Variable
+```java
+public class ConditionTest {
+    @Test
+    @EnabledIfEnvironmentVariable(named = "PROFILE", matches = "DEV")
+    public void enabledOnProfileDev() {
+        // put your unit test
+    }
+
+    @Test
+    @DisabledIfEnvironmentVariable(named = "PROFILE", matches = "DEV")
+    public void disabledOnProfileDev() {
+        // put your unit test
+    }
+
+    @Test
+    @EnabledIfEnvironmentVariables({
+            @EnabledIfEnvironmentVariable(named = "PROFILE", matches = "DEV")
+    })
+    public void enabledOnEnvironmentVariables() {
+        // put your unit test
+    }
+
+    @Test
+    @DisabledIfEnvironmentVariables({
+            @DisabledIfEnvironmentVariable(named = "PROFILE", matches = "DEV")
+    })
+    public void disabledOnEnvironmentVariables() {
+        // put your unit test
+    }
+}
+```
