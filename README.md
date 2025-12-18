@@ -481,7 +481,7 @@ public class OrderedTest {
     }
 
     @Test
-    @Order(3)
+    @Order(2)
     public void test2() {
         // put your unit test
     }
@@ -496,3 +496,78 @@ public class OrderedTest {
 
 ## Membuat Urutan Sendiri
 - Jika kita ingin membuat cara mengurutkan urutan unit test function sendiri, kita bisa dengan mudah membuat class baru turunan dari MethodOrderer interface.
+
+# Siklus Hidup Test
+- Secara default, lifecycle (siklus hidup) object test adalah independent per method test, artinya object unit test akan selalu dibuat baru per method unit test, oleh karena itu kita tidak bisa bergantung dengan method test lain.
+- Cara pembuatan object test di JUnit ditentukan oleh annotation ```@TestInstance```, dimana default-nya adalah ```Lifecycle.PER_METHOD```, artinya tiap method akan dibuat sebuah instance / object baru.
+- Kita bisa merubahnya menjadi ```Lifecycle.PER_CLASS``` jika mau, dengan demikian instance / object test hanya dibuat sekali per class, dan method test akan menggunakan object test yang sama.
+- Hal ini bisa kita manfaatkan ketika membuat test yang tergantung dengan test lain.
+- Kode: Menggunakan Instance Per Class
+```java
+@TestInstance(value = TestInstance.Lifecycle.PER_CLASS)
+@TestMethodOrder(value = MethodOrderer.OrderAnnotation.class)
+public class OrderedTest {
+    private int count = 0;
+
+    @Test
+    @Order(3)
+    public void test3() {
+        // put your unit test
+        count++;
+        System.out.println(count);
+    }
+
+    @Test
+    @Order(2)
+    public void test2() {
+        // put your unit test
+    }
+
+    @Test
+    @Order(1)
+    public void test1() {
+        // put your unit test
+    }
+}
+```
+
+## Keuntungan Instance Per Class
+- Salah satu keuntungan saat menggunakan ```Lifecycle.PER_CLASS``` adalah, kita bisa menggunakan ```@BeforeAll``` & ```@AfterAll``` di method biasa, tidak harus menggunakan function object / static.
+- Kode: BeforeAll dan AfterAll
+```java
+@TestInstance(value = TestInstance.Lifecycle.PER_CLASS)
+@TestMethodOrder(value = MethodOrderer.OrderAnnotation.class)
+public class OrderedTest {
+    private int count = 0;
+    
+    @BeforeAll
+    public void beforeAll() {
+        
+    }
+    
+    @AfterAll
+    public void afterAll() {
+        
+    }
+
+    @Test
+    @Order(3)
+    public void test3() {
+        // put your unit test
+        count++;
+        System.out.println(count);
+    }
+
+    @Test
+    @Order(2)
+    public void test2() {
+        // put your unit test
+    }
+
+    @Test
+    @Order(1)
+    public void test1() {
+        // put your unit test
+    }
+}
+```

@@ -1,20 +1,32 @@
 package belajar.java.testing;
 
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 
+@TestInstance(value = TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(value = MethodOrderer.OrderAnnotation.class)
 public class OrderedTest {
-    @Test
-    @Order(2)
-    public void test3() {
-        // put your unit test
+    private int count = 0;
+
+    @BeforeAll
+    public void beforeAll() {
+        System.out.println("Before all");
+    }
+
+    @AfterAll
+    public void afterAll() {
+        System.out.println("After all");
     }
 
     @Test
     @Order(3)
+    public void test3() {
+        // put your unit test
+        count++;
+        System.out.println(count);
+    }
+
+    @Test
+    @Order(2)
     public void test2() {
         // put your unit test
     }
