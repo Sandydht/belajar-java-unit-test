@@ -652,3 +652,32 @@ public class RandomCalculatorTest {
     }
 }
 ```
+
+# Pewarisan di Test
+- JUnit mendukung pewarisan di test, artinya jika kita membuat class atau interface dan menambahkan informasi test disitu, maka ketika kita membuat turunannya, secara otomatis semua fitur test-nya dimiliki oleh turunannya.
+- Ini sangat cocok ketika kita misal contohnya sering membuat code sebelum dan setelah test yang berulang-ulang, sehingga dibanding dibuat di semua test class, lebih baik dibuat sekali di parent test class, dan test class tinggal menjadi child class dari parent test class.
+- Kode: Membuat Parent Test Class
+```java
+@Extensions(value = {
+        @ExtendWith(RandomParameterResolver.class)
+})
+public class ParentCalculatorTest {
+    protected Calculator calculator = new Calculator();
+    
+    @BeforeEach
+    public void setUp() {
+        System.out.println("Before each");
+    }
+}
+```
+- Kode: Membuat Child Test Class
+```java
+public class RandomCalculatorTest extends ParentCalculatorTest {
+    @Test
+    public void testRandom() {
+        var a = random.nextInt();
+        var b = random.nextInt();
+        assertEquals(a + b, calculator.add(a, b));
+    }
+}
+```
