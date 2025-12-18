@@ -705,3 +705,6 @@ public class RandomCalculatorTest extends ParentCalculatorTest {
     }
 }
 ```
+
+## Informasi Perulangan
+- ```@RepeatedTest``` juga memiliki object RepetitionInfo yang di inject oleh class RepetitionParameterResolver, sehingga kita bisa mendapatkan informasi RepetitionInfo melalui parameter function unit test.
