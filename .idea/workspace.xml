@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f337e3b-7d2a-42ae-95b4-11121553b98c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/SampleIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/LifecycleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/OrderedTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/belajar-java-unit-test-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-belajar.java.testing.AppTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-belajar.java.testing.CalculatorTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/belajar.java.testing.AppTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/belajar.java.testing.CalculatorTest.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +56,10 @@
     "JUnit.CalculatorTest.testDivideFailed.executor": "Run",
     "JUnit.CalculatorTest.testDivideSuccess.executor": "Run",
     "JUnit.ConditionTest.executor": "Run",
+    "JUnit.LifecycleTest.executor": "Run",
+    "JUnit.OrderedTest.executor": "Run",
     "JUnit.SampleIntegrationTest.executor": "Run",
+    "Maven.belajar-java-unit-test [test...].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
@@ -73,7 +67,7 @@
     "last_opened_file_path": "/Users/sandy/Development/project-belajar/belajar-java-unit-test"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.SampleIntegrationTest">
+  <component name="RunManager" selected="JUnit.OrderedTest">
     <configuration name="CalculatorTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="belajar-java-unit-test" />
       <extension name="coverage">
@@ -109,38 +103,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest.testDivideError" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="belajar-java-unit-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="belajar.java.testing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="belajar.java.testing" />
-      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.CalculatorTest" />
-      <option name="METHOD_NAME" value="testDivideError" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CalculatorTest.testDivideFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="belajar-java-unit-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="belajar.java.testing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="belajar.java.testing" />
-      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.CalculatorTest" />
-      <option name="METHOD_NAME" value="testDivideFailed" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ConditionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="belajar-java-unit-test" />
       <extension name="coverage">
@@ -156,6 +118,36 @@
       <envs>
         <env name="PROFILE" value="DEV" />
       </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LifecycleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="belajar-java-unit-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="belajar.java.testing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="belajar.java.testing" />
+      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.LifecycleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="belajar-java-unit-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="belajar.java.testing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="belajar.java.testing" />
+      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.OrderedTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -177,19 +169,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.CalculatorTest" />
+      <item itemvalue="JUnit.LifecycleTest" />
+      <item itemvalue="JUnit.OrderedTest" />
       <item itemvalue="JUnit.SampleIntegrationTest" />
       <item itemvalue="JUnit.ConditionTest" />
       <item itemvalue="JUnit.CalculatorTest.testAssumptions" />
-      <item itemvalue="JUnit.CalculatorTest.testDivideError" />
-      <item itemvalue="JUnit.CalculatorTest.testDivideFailed" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderedTest" />
+        <item itemvalue="JUnit.LifecycleTest" />
         <item itemvalue="JUnit.SampleIntegrationTest" />
         <item itemvalue="JUnit.ConditionTest" />
         <item itemvalue="JUnit.CalculatorTest.testAssumptions" />
-        <item itemvalue="JUnit.CalculatorTest.testDivideError" />
-        <item itemvalue="JUnit.CalculatorTest.testDivideFailed" />
       </list>
     </recent_temporary>
   </component>

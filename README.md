@@ -459,3 +459,40 @@ public class SampleIntegrationTest {
 ```shell
 mvn test -Dgroups=tag1,tag2
 ```
+
+# Urutan Eksekusi Test
+- Secara default, urutan eksekusi unit test tidak ditentukan, jadi jangan berharap jika sebuah method berada diatas method lainnya, maka akan dijalankan lebih dulu.
+- Hal ini karena memang sebaiknya method unit test itu harus independen, tidak saling ketergantungan.
+- Secara default pun, object class unit test akan selalu dibuat ulang tiap method, jadi jangan berharap kita bisa menyimpan data di variable untuk digunakan di unit test method selanjutnya.
+
+## Mengubah Urutan Eksekusi Test
+- JUnit mendukung perubahan urutan eksekusi test jika kita mau menggunakan annotation ```@TestMethodOrder```, ada beberapa cara yang bisa kita lakukan.
+- Alphanumeric, artinya urutan eksekusi unit test akan diurutkan berdasarkan alphanumeric.
+- Random, artinya urutan-urutan eksekusi unit test akan dieksekusi secara random.
+- OrderAnnotation, artinya urutan eksekusi unit test akan mengikuti annotation ```@Order``` yang ada di tiap method unit test.
+- Kode: Menggunakan Order Annotation
+```java
+@TestMethodOrder(value = MethodOrderer.OrderAnnotation.class)
+public class OrderedTest {
+    @Test
+    @Order(3)
+    public void test3() {
+        // put your unit test
+    }
+
+    @Test
+    @Order(3)
+    public void test2() {
+        // put your unit test
+    }
+
+    @Test
+    @Order(1)
+    public void test1() {
+        // put your unit test
+    }
+}
+```
+
+## Membuat Urutan Sendiri
+- Jika kita ingin membuat cara mengurutkan urutan unit test function sendiri, kita bisa dengan mudah membuat class baru turunan dari MethodOrderer interface.
