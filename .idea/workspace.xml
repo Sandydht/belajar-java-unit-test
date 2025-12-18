@@ -63,6 +63,7 @@
     "JUnit.RandomCalculatorTest.executor": "Run",
     "JUnit.RandomCalculatorTest.testRandomRepeat.executor": "Run",
     "JUnit.RandomCalculatorTest.testRandomRepeatInfo.executor": "Run",
+    "JUnit.RandomCalculatorTest.testWithParameter.executor": "Run",
     "JUnit.SampleIntegrationTest.executor": "Run",
     "Maven.belajar-java-unit-test [test...].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -72,7 +73,7 @@
     "last_opened_file_path": "/Users/sandy/Development/project-belajar/belajar-java-unit-test"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.RandomCalculatorTest.testRandomRepeatInfo">
+  <component name="RunManager" selected="JUnit.RandomCalculatorTest.testWithMethodSource">
     <configuration name="CalculatorTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="belajar-java-unit-test" />
       <extension name="coverage">
@@ -88,36 +89,6 @@
       <envs>
         <env name="PROFILE" value="PROD" />
       </envs>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InformationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="belajar-java-unit-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="belajar.java.testing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="belajar.java.testing" />
-      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.InformationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QueueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="belajar-java-unit-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="belajar.java.testing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="belajar.java.testing" />
-      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.QueueTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -169,21 +140,53 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RandomCalculatorTest.testWithMethodSource" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="belajar-java-unit-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="belajar.java.testing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="belajar.java.testing" />
+      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.RandomCalculatorTest" />
+      <option name="METHOD_NAME" value="testWithMethodSource(java.lang.Integer)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RandomCalculatorTest.testWithParameter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="belajar-java-unit-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="belajar.java.testing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="belajar.java.testing" />
+      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.RandomCalculatorTest" />
+      <option name="METHOD_NAME" value="testWithParameter(int)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.CalculatorTest" />
-      <item itemvalue="JUnit.InformationTest" />
-      <item itemvalue="JUnit.QueueTest" />
       <item itemvalue="JUnit.RandomCalculatorTest" />
       <item itemvalue="JUnit.RandomCalculatorTest.testRandomRepeat" />
       <item itemvalue="JUnit.RandomCalculatorTest.testRandomRepeatInfo" />
+      <item itemvalue="JUnit.RandomCalculatorTest.testWithMethodSource" />
+      <item itemvalue="JUnit.RandomCalculatorTest.testWithParameter" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RandomCalculatorTest.testWithMethodSource" />
+        <item itemvalue="JUnit.RandomCalculatorTest.testWithParameter" />
         <item itemvalue="JUnit.RandomCalculatorTest.testRandomRepeatInfo" />
         <item itemvalue="JUnit.RandomCalculatorTest.testRandomRepeat" />
         <item itemvalue="JUnit.RandomCalculatorTest" />
-        <item itemvalue="JUnit.InformationTest" />
-        <item itemvalue="JUnit.QueueTest" />
       </list>
     </recent_temporary>
   </component>
