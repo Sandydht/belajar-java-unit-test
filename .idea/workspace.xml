@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f337e3b-7d2a-42ae-95b4-11121553b98c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/InformationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/RandomCalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/resolver/RandomParameterResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -59,6 +60,7 @@
     "JUnit.LifecycleTest.executor": "Run",
     "JUnit.OrderedTest.executor": "Run",
     "JUnit.QueueTest.executor": "Run",
+    "JUnit.RandomCalculatorTest.executor": "Run",
     "JUnit.SampleIntegrationTest.executor": "Run",
     "Maven.belajar-java-unit-test [test...].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -68,7 +70,7 @@
     "last_opened_file_path": "/Users/sandy/Development/project-belajar/belajar-java-unit-test"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.InformationTest">
+  <component name="RunManager" selected="JUnit.RandomCalculatorTest">
     <configuration name="CalculatorTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="belajar-java-unit-test" />
       <extension name="coverage">
@@ -148,7 +150,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SampleIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RandomCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="belajar-java-unit-test" />
       <extension name="coverage">
         <pattern>
@@ -157,7 +159,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="belajar.java.testing" />
-      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.SampleIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.RandomCalculatorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,17 +169,17 @@
       <item itemvalue="JUnit.CalculatorTest" />
       <item itemvalue="JUnit.InformationTest" />
       <item itemvalue="JUnit.QueueTest" />
+      <item itemvalue="JUnit.RandomCalculatorTest" />
       <item itemvalue="JUnit.LifecycleTest" />
       <item itemvalue="JUnit.OrderedTest" />
-      <item itemvalue="JUnit.SampleIntegrationTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RandomCalculatorTest" />
         <item itemvalue="JUnit.InformationTest" />
         <item itemvalue="JUnit.QueueTest" />
         <item itemvalue="JUnit.OrderedTest" />
         <item itemvalue="JUnit.LifecycleTest" />
-        <item itemvalue="JUnit.SampleIntegrationTest" />
       </list>
     </recent_temporary>
   </component>

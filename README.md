@@ -612,3 +612,43 @@ public class InformationTest{
     }
 }
 ```
+
+# Dependency Injection di Test
+- Tidak ada magic di JUnit, sebenarnya fitur TestInfo yang sebelumnya kita bahas adalah bagian dari dependency injection di JUnit.
+- Dependency injection sederhanannya adalah bagaimana kita bisa memasukkan dependency (object/instance) ke dalam unit test secara otomatis tanpa proses manual.
+- Saat kita menambah parameter di function unit test, sebenarnya kita bisa secara otomatis memasukkan parameter tersebut dengan bantuan ParameterResolver.
+- Contohnya TestInfo yang kita bahas sebelumnya, sebenarnya object tersebut dibuat oleh TestInfoParameterResolver.
+- Kode: Membuat Random Parameter Resolver
+```java
+public class RandomParameterResolver implements ParameterResolver {
+    private Random random = new Random();
+    
+    @Override
+    public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) {
+        return parameterContext.getParameter().getType() == Random.class;
+    }
+    
+    @Override
+    public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) {
+        return random;
+    }
+}
+```
+
+## Menggunakan Parameter Resolver 
+- Untuk menggunakan parameter resolver yang sudah kita buat, kita bisa menggunakan annotation ```@ExtendWith``` di test class.
+- Jika lebih dari 1 parameter resolver, kita bisa menggunakan ```@Extensions```.
+- Kode: Menggunakan Random Resolver
+```java
+@Extensions(value = { @ExtendWith(RandomParameterResolver.class) })
+public class RandomCalculatorTest {
+    private Calculator calculator = new Calculator();
+    
+    @Test
+    public void testRandom(Random random) {
+        var a = random.nextInt();
+        var b = random.nextInt();
+        assertEquals(a + b, calculator.add(a, b));
+    }
+}
+```
