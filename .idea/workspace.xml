@@ -5,28 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f337e3b-7d2a-42ae-95b4-11121553b98c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/AbstractCalculatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/belajar/java/testing/RandomCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/RandomCalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/belajar/java/testing/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/belajar/java/testing/Calculator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/AppTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/CalculatorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/ConditionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/InformationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/LifecycleTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/OrderedTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/QueueTest$WhenNew.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/QueueTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/RandomCalculatorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/SampleIntegrationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/generator/SimpleDisplayNameGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/resolver/RandomParameterResolver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/RandomCalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/belajar/java/testing/RandomCalculatorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
