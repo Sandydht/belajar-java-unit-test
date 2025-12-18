@@ -593,3 +593,22 @@ public class QueueTest {
     }
 }
 ```
+
+# Informasi Test
+- Walaupun mungkin jarang kita gunakan, tapi kita juga bisa mendapatkan informasi test yang sedang berjalan menggunakan interface TestInfo.
+- Kita bisa menambahkan TestInfo sebagai parameter di function unit test.
+- Kode: Menggunakan Test Info
+```java
+@DisplayName("Test with TestInfo")
+public class InformationTest{
+    @Test
+    @Tag("cool")
+    @DisplayName("This is test one")
+    public void testOne(TestInfo testInfo) {
+        System.out.println(testInfo.getDisplayName());
+        System.out.println(testInfo.getTags());
+        System.out.println(testInfo.getTestMethod());
+        System.out.println(testInfo.getTestClass());
+    }
+}
+```
