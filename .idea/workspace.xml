@@ -5,33 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f337e3b-7d2a-42ae-95b4-11121553b98c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/MockTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-belajar.java.testing.AppTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-belajar.java.testing.CalculatorTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-belajar.java.testing.ConditionTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-belajar.java.testing.InformationTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-belajar.java.testing.LifecycleTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-belajar.java.testing.OrderedTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-belajar.java.testing.QueueTest$WhenNew.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-belajar.java.testing.QueueTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-belajar.java.testing.RandomCalculatorTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-belajar.java.testing.SampleIntegrationTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/belajar.java.testing.AppTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/belajar.java.testing.CalculatorTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/belajar.java.testing.ConditionTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/belajar.java.testing.InformationTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/belajar.java.testing.LifecycleTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/belajar.java.testing.OrderedTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/belajar.java.testing.QueueTest$WhenNew.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/belajar.java.testing.QueueTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/belajar.java.testing.RandomCalculatorTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/belajar.java.testing.SampleIntegrationTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/belajar/java/testing/data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/belajar/java/testing/data/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/belajar/java/testing/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/belajar/java/testing/repository/PersonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/belajar/java/testing/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/belajar/java/testing/service/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/belajar/java/testing/service/PersonServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/belajar/java/testing/service/PersonServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +64,7 @@
     "JUnit.MockTest.executor": "Run",
     "JUnit.MockTest.testMock.executor": "Run",
     "JUnit.OrderedTest.executor": "Run",
+    "JUnit.PersonServiceTest.executor": "Run",
     "JUnit.QueueTest.executor": "Run",
     "JUnit.RandomCalculatorTest.executor": "Run",
     "JUnit.RandomCalculatorTest.testRandomRepeat.executor": "Run",
@@ -99,7 +80,7 @@
     "last_opened_file_path": "/Users/sandy/Development/project-belajar/belajar-java-unit-test"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.MockTest">
+  <component name="RunManager" selected="JUnit.PersonServiceTest">
     <configuration name="CalculatorTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="belajar-java-unit-test" />
       <extension name="coverage">
@@ -150,18 +131,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RandomCalculatorTest.testRandomRepeatInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PersonServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="belajar-java-unit-test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="belajar.java.testing.*" />
+          <option name="PATTERN" value="belajar.java.testing.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="belajar.java.testing" />
-      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.RandomCalculatorTest" />
-      <option name="METHOD_NAME" value="testRandomRepeatInfo(org.junit.jupiter.api.TestInfo,java.util.Random,org.junit.jupiter.api.RepetitionInfo)" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="belajar.java.testing.service" />
+      <option name="MAIN_CLASS_NAME" value="belajar.java.testing.service.PersonServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -202,17 +182,17 @@
       <item itemvalue="JUnit.CalculatorTest" />
       <item itemvalue="JUnit.MockTest" />
       <item itemvalue="JUnit.MockTest.testMock" />
-      <item itemvalue="JUnit.RandomCalculatorTest.testRandomRepeatInfo" />
+      <item itemvalue="JUnit.PersonServiceTest" />
       <item itemvalue="JUnit.RandomCalculatorTest.testWithMethodSource" />
       <item itemvalue="JUnit.RandomCalculatorTest.testWithParameter" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PersonServiceTest" />
         <item itemvalue="JUnit.MockTest" />
         <item itemvalue="JUnit.MockTest.testMock" />
         <item itemvalue="JUnit.RandomCalculatorTest.testWithMethodSource" />
         <item itemvalue="JUnit.RandomCalculatorTest.testWithParameter" />
-        <item itemvalue="JUnit.RandomCalculatorTest.testRandomRepeatInfo" />
       </list>
     </recent_temporary>
   </component>

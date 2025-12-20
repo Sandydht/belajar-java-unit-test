@@ -800,3 +800,240 @@ public class MockTest {
     }
 }
 ```
+
+# Mocking di Test
+- Mockito memiliki MockitoExtention yang bisa kita gunakan untuk integrasi dengan JUnit.
+- Hal ini memudahkan kita ketika ingin membuat mock object, kita cukup gunakan ```@Mock```.
+- Agar terbayang bagaimana proses mock, kita akan coba kasus yang lumayan panjang.
+
+## Contoh Kasus
+- Kita punya sebuah class model dengan nama class Person(id: String, name: String).
+- Selanjutnya kita punya interface PersonRepository sebagai interaksi ke database, dan memiliki function selectById(id: String) untuk mendapatkan data Person di database.
+- Dan terakhir kita memiliki class PersonService yang digunakan sebagai class bisnis logic, dimana di class tersebut kita akan coba gunakan PersonRepository untuk mendapatkan data dari database, jika gagal, kita akan throw Exception.
+- Kode: Class Person
+```java
+public class Person {
+    private String id;
+    private String name;
+    
+    public Person() {
+        
+    }
+    
+    public Person(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    
+    public String getId() {
+        return id;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        
+        Person person = (Person) o;
+        
+        if (id != null ? !id.equals(person.id) : person.id != null) return false;
+        return name != null ? name.equals(person.name) : person.name == null;
+    }
+    
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
+}
+```
+- Kode: Interface PersonRepository
+```java
+import belajar.java.testing.data.Person;
+
+public interface PersonRepository {
+    Person selectById(String id);
+}
+```
+- Kode: Class PersonService
+```java
+import belajar.java.testing.repository.PersonRepository;
+
+public class PersonService {
+    private PersonRepository personRepository;
+    
+    public PersonService(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
+    
+    public Person get(String id) {
+        var person = personRepository.selectById(id);
+        if (person != null) {
+            return person;
+        } else {
+            throw new IllegalArgumentException("Person not found");
+        }
+    }
+}
+```
+- Kode: Integrasi Mockito dan JUnit
+```java
+import belajar.java.testing.repository.PersonRepository;
+import belajar.java.testing.service.PersonService;
+
+@ExtendWith(MockitoExtension.class)
+public class PersonServiceTest {
+    @Mock
+    private PersonRepository personRepository;
+
+    private PersonService personService;
+    
+    @BeforeEach
+    public void setUp() {
+        personService = new PersonService(personRepository);
+    }
+}
+```
+- Kode: Test Get Person
+```java
+@Extensions({
+        @ExtendWith(MockitoExtension.class)
+})
+public class PersonServiceTest {
+    @Mock
+    private PersonRepository personRepository;
+
+    private PersonService personService;
+
+    @BeforeEach
+    public void setUp() {
+        personService = new PersonService(personRepository);
+    }
+    
+    @Test
+    public void testGetNotFound() {
+        assertThrows(IllegalArgumentException.class, () -> personService.get("Person not found"));
+    }
+    
+    @Test
+    public void testGetSuccess() {
+        when(personRepository.selectById("sandy")).thenReturn(new Person("sandy", "Sandy"));
+        var person = personService.get("sandy");
+        assertEquals("sandy", person.getId());
+        assertEquals("Sandy", person.getName());
+    }
+}
+```
+
+# Verifikasi di Mocking
+- Pada materi sebelumnya, kita tidak melakukan verifikasi terhadap object mocking, adapakah dipanggil atau tidak.
+- Pada kasus sebelumnya mungkin tidak terlalu berguna karena kebetulan function-nya mengembalikan value, sehingga kalo kita lupa memanggil method-nya, sudah pasti unit test-nya gagal.
+- Lantas bagaimana jika function-nya tidak mengembalikan value ? Alias function unit.
+
+## Contoh Kasus
+- Kita akan melanjutkan kasus sebelumnya.
+- Di interface PersonRepository kita akan membuat method insert(person: Person) yang digunakan untuk menyimpan data ke database, namun tidak mengembalikan value, alias void;
+- Di class PersonService kita akan membuat method register(name: String) dimana akan membuat object Person dengan id random, lalu menyimpan ke database via PersonRepository, lalu mengembalikan object person tersebut.
+- Kode: Person Repository
+```java
+import belajar.java.testing.data.Person;
+
+public interface PersonRepository {
+    Person selectById(String id);
+
+    void insert(Person person);
+}
+```
+- Kode: Person Service
+```java
+import belajar.java.testing.repository.PersonRepository;
+
+import java.util.UUID;
+
+public class PersonService {
+    private PersonRepository personRepository;
+
+    public Person register(String name) {
+        var person = new Person(UUID.randomUUID().toString(), name);
+        personRepository.insert(person);
+        return person;
+    }
+}
+```
+- Kode: Unit Test (Sebenarnya Salah)
+```java
+@Extensions({
+        @ExtendWith(MockitoExtension.class)
+})
+public class PersonServiceTest {
+    @Mock
+    private PersonRepository personRepository;
+
+    private PersonService personService;
+
+    @BeforeEach
+    public void setUp() {
+        personService = new PersonService(personRepository);
+    }
+    
+    @Test
+    public void testCreateSuccess() {
+        var person = personService.register("Sandy");
+        assertEquals("Sandy", person.getName());
+        assertNotNull(person.getId());
+    }
+}
+```
+
+## Kenapa Salah ?
+- Coba hapus kode ```personRepository.insert(person)```.
+- Maka unit test-nya pun tetap sukses.
+- Hal ini terjadi karena, kita tidak melakukan verifikasi bahwa mocking object dipanggil.
+- Hal ini sangat berbahaya, karena jika code sampai naik ke production, bisa jadi orang yang registrasi datanya tidak masuk ke database.
+- Kode: Unit Test dengan Verifikasi
+```java
+@Extensions({
+        @ExtendWith(MockitoExtension.class)
+})
+public class PersonServiceTest {
+    @Mock
+    private PersonRepository personRepository;
+
+    private PersonService personService;
+
+    @BeforeEach
+    public void setUp() {
+        personService = new PersonService(personRepository);
+    }
+    
+    @Test
+    public void testCreateSuccess() {
+        var person = personService.register("Sandy");
+        assertEquals("Sandy", person.getName());
+        assertNotNull(person.getId());
+        
+        Mockito.verify(personRepository, Mockito.times(1)).insert(new Person(person.getId(), person.getName()));
+    }
+}
+```
