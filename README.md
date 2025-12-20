@@ -750,3 +750,53 @@ public class RandomCalculatorTest extends ParentCalculatorTest {
     }
 }
 ```
+
+# Ketergantungan Antar Class
+- Saat membuat aplikasi yang besar, source code pun akan semakin besar, struktur class pun akan semakin kompleks.
+- Kita tidak bisa memungkiri lagi bahwa akan ada ketergantungan antar class.
+- Unit test yang bagus itu bisa terprediksi dan cukup nge-test ke satu function, jika harus mengetes interaksi antar class, lebih disarankan integration test.
+- Lantas bagaimana jika kita harus mengetest class yang ketergantungan dengan class lain ?.
+- Solusinya adalah melakukan mocking terhadap dependency yang dibutuhkan class yang akan kita test.
+
+## Pengenalan Mocking
+- Mocking sederhananya adalah membuat object tiruan.
+- Hal ini dilakukan agar behavior object tersebut bisa kita tentukan sesuai dengan keinginan kita.
+- Dengan mocking, kita bisa membuat request response seolah-olah object tersebut benar dibuat.
+
+## Pengenalan Mockito
+- Ada banyak framework untuk melakukan mocking, namun di materi ini kita akan menggunakan Mockito.
+- Mockito adalah satu mocking framework paling populer di Java, dan bisa digunakan juga untuk Kotlin.
+- Dan Mockito bisa diintegrasikan baik dengan JUnit.
+- [Dokumentasi Mockito](https://site.mockito.org/).
+- Kode: Menambah Dependency Mockito
+```xml
+<project>
+    <dependencies>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>3.4.4</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+- Kode: Contoh Mocking dengan Mockito
+```java
+public class MockTest {
+    @Test
+    public void testMock() {
+        // Membuat Mock object
+        List<String> list = Mockito.mock(List.class);
+        
+        // Menambah behavior ke Mock object
+        Mockito.when(list.get(0)).thenReturn("Sandy");
+        
+        // Test mock
+        assertEquals("Sandy", list.get(0));
+        
+        // Verify mock
+        Mockito.verify(list, Mockito.times(1)).get(0);
+    }
+}
+```
